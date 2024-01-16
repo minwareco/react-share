@@ -2,7 +2,10 @@ import React, { Ref, forwardRef } from 'react';
 
 import ShareButton, { Props as ShareButtonProps } from '../ShareButton';
 
-function createShareButton<OptionProps extends Record<string, any>, LinkOptions = OptionProps>(
+function createShareButton<
+  OptionProps extends Record<string, any>,
+  LinkOptions extends Record<string, unknown> = OptionProps,
+>(
   networkName: string,
   link: (url: string, options: LinkOptions) => string,
   optsMap: (props: OptionProps) => LinkOptions,
@@ -21,7 +24,7 @@ function createShareButton<OptionProps extends Record<string, any>, LinkOptions 
     // remove keys from passed props that are passed as opts
     const optsKeys = Object.keys(opts);
     optsKeys.forEach(key => {
-      delete (passedProps as any)[key];
+      delete passedProps[key];
     });
 
     return (

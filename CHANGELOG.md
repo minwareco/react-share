@@ -1,5 +1,52 @@
 # Changelog
 
+## 5.0.3
+
+### Patch Changes
+
+- ddcf9c8: Fixed invalid `exports` configuration (reference to `dist/index.cjs`).
+
+## 5.0.2
+
+### Patch Changes
+
+- b1da2d9: Fix Reddit logo in `RedditIcon`.
+- 2588f97: Fixed colors for: `FacebookIcon`, `LinkedinIcon`, `OKIcon`, `PinterestIcon`, `RedditIcon`, `TelegramIcon`, `TumblrIcon`, `VKIcon`, `ViberIcon`, `WeiboIcon`, `WorkplaceIcon`.
+- 6a43137: Fixed WhatsApp sharring issue on Android described [here](https://github.com/nygardk/react-share/issues/484).
+
+## 5.0.1
+
+### Patch Changes
+
+- 8dd0134: `@changesets/cli` was accidentally added in `dependencies`. It is now moved to `devDependencies`.
+
+## 5.0.0
+
+### Major Changes
+
+- c04c694: Removed the `quote` prop from `FacebookShareButton` as it has been deprecated by Meta. See https://developers.facebook.com/support/bugs/734680371318112/?comment_id=743056360480513.
+- 043faa3: Removed default `aria-label` prop from `ShareButtons`. Before it defaulted to the name of the "network name" (e.g. "facebook" for Facebook). Issue explained [here](https://github.com/nygardk/react-share/issues/397).
+- d4c192a: Compilation target is now ES2017 instead of ES5. The distributed files are built with Vite instead of TypeScript compiler.
+- 471510a: Dropped support for React 16.
+
+### Minor Changes
+
+- 2c0ab57: Added `GabShareButton` and `GabIcon` to share on [gab.com](https://gab.com). Originally implemented [here](https://github.com/nygardk/react-share/pull/425).
+- 18f2de2: Added `XIcon`.
+- 77ecaa7: Share counts are now created as function components instead of class components.
+- 15fd50d: Added `pinId` prop for `PinterestShareButton`.
+- 44c672f: Share buttons are now created as function components instead of class components.
+
+### Patch Changes
+
+- 65b53c5: Fix `HatenaShareCount` to show also `0`. Originally fixed [here](https://github.com/nygardk/react-share/pull/429).
+- 14bbffa: Fixed `createIcon` defaultProps warning with React 18.
+
+## 4.4.1 (Oct 16, 2022)
+
+- Chore: upgraded build deps
+- Fix: Support React 18 in `peerDependencies`
+
 ## 4.4.0 (Feb 23, 2021)
 
 - Fix: Support React 17 in `peerDependencies` (#379)
