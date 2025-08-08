@@ -1,5 +1,54 @@
 # Changelog
 
+## 5.2.2
+
+### Patch Changes
+
+- d04d084: Fix warning of passing extraneous `networkName` for the share buttons.
+
+## 5.2.1
+
+### Patch Changes
+
+- 47c2906: Fix `EmailShareButton`: a bug slipped in that broke the sharing functionality.
+
+## 5.2.0
+
+### Minor Changes
+
+- 373add6: Added `BlueskyShareButton` and `BlueskyIcon`. This button will take a title and url parameter, and then use [Bluesky Intent Links](https://docs.bsky.app/docs/advanced-guides/intent-links) to share that content. There is also an overrideable seperator parameter (defaults as ' ') that seperates the title and url.
+- d45d811: Added `ThreadsShareButton` and `ThreadsIcon`.
+
+### Patch Changes
+
+- 8a5016a: Build tooling updates. May affect the distributed files.
+- 15e830f: The `title` prop is no longer passed to the `button` element, which may have caused e.g. warnings in the console before. Note that to set the native `title` attribute for the share buttons, you may use the `htmlTitle` prop.
+- d172111: Internal type fixes.
+
+## 5.1.2
+
+### Patch Changes
+
+- e5f3488: Support React 19 in peerDependencies
+
+## 5.1.1
+
+### Patch Changes
+
+- e4c1704: This patch fixes an issue with the Reddit sharing functionality, where the shared link was not automatically populated in Reddit’s share preview. By appending /web before /submit in the Reddit share URL, the link now populates correctly, improving the user experience for Reddit sharing.
+
+## 5.1.0
+
+### Minor Changes
+
+- 4e74597: Added `htmlTitle` prop for the share button. This prop will be passed as the native `title` attribute for the `button` element.
+
+## 5.0.4
+
+### Patch Changes
+
+- 1c50111: Fixed `exports` in package.json to comply with the `publint` and `attw` tools. May solve issues when your project uses CommonJS modules and Node.js v16 or newer.
+
 ## 5.0.3
 
 ### Patch Changes
