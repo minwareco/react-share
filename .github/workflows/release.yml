@@ -1,32 +1,17 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - master
+  # Disabled: upstream release workflow; minwareco does not publish this package to NPM
   workflow_dispatch:
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
-
-permissions:
-  contents: write
-  pull-requests: write
-  id-token: write
+    inputs:
+      disabled:
+        description: 'This workflow is disabled'
+        required: false
 
 jobs:
   release:
     name: Release
+    if: false
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: ./.github/actions/npm-install
-
-      - name: Create Release PR or publish to NPM
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: npm run release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: echo "disabled"
